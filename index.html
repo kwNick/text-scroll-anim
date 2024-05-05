@@ -13,15 +13,15 @@
     </section>
 
     <section>
-        <p class="reveal-type">Systematically </p>
+        <p class="reveal-type" data-bg-color="#cccccc" data-fg-color="teal">Systematically </p>
     </section>
 
     <section>
-        <p class="reveal-type">Modern UI designers</p>
+        <p class="reveal-type" data-bg-color="#b6b600" data-fg-color="black">Modern UI designers</p>
     </section>
 
     <section>
-        <p class="reveal-type">The web isn't static anymore,</p>
+        <p class="reveal-type" data-bg-color="#353535" data-fg-color="red">The web isn't static anymore,</p>
     </section>
 
     <section></section>
@@ -32,7 +32,7 @@
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
     <script>
 
         gsap.registerPlugin(ScrollTrigger);
@@ -40,6 +40,8 @@
         const splitTypes = document.querySelectorAll('.reveal-type')
 
         splitTypes.forEach((char, i) => {
+            const bg = char.dataset.bgColor
+            const fg = char.dataset.fgColor
             const text = new SplitType(char, { types: 'chars' })
             gsap.from(text.chars, {
                 scrollTrigger: {
