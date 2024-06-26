@@ -38,14 +38,14 @@
         gsap.registerPlugin(ScrollTrigger);
 
         const splitTypes = document.querySelectorAll('.reveal-type')
-        // console.log(splitTypes);
+        console.log(splitTypes);
 
         splitTypes.forEach((char, i) => {
-            // console.log(char);
+            console.log(char.dataset);
             const bg = char.dataset.bgColor
             const fg = char.dataset.fgColor
             const text = new SplitType(char, { types: 'chars' })
-            // console.log(text);
+            console.log(text);
 
             gsap.fromTo(text.chars, {
                 color: bg,
